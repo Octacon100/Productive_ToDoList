@@ -1,0 +1,32 @@
+<h2>{{dayInfo.date | date}} Details</h2>
+<div><span>date: </span>{{dayInfo.date | date}}</div>
+<div><span>rating: </span>{{dayInfo.dayRating}}</div>
+<div><span>details: </span>{{dayInfo.dayDetails}}</div>
+<div><span>notes: </span>{{dayInfo.dayNotes}}</div>
+
+<label id="day-rater-header">PRODUCTIVITY SCORE</label>
+<label id="day-rater-title">How productive were you today on a scale of 1-10? What happened?</label>
+
+<div>
+    <mat-radio-group [(ngModel)]="dayInfo.dayRating"> 
+        <mat-radio-button value=1 >1</mat-radio-button>
+        <mat-radio-button value=2 >2</mat-radio-button>
+        <mat-radio-button value=3 >3</mat-radio-button>
+        <mat-radio-button value=4 >4</mat-radio-button>
+        <mat-radio-button value=5 >5</mat-radio-button>
+        <mat-radio-button value=6 >6</mat-radio-button>
+        <mat-radio-button value=7 >7</mat-radio-button>
+        <mat-radio-button value=8 >8</mat-radio-button>
+        <mat-radio-button value=9 >9</mat-radio-button>
+        <mat-radio-button value=10 >10</mat-radio-button>
+</mat-radio-group>
+</div>
+<div>
+    <input class="day-detail" class="dayDescTextbox" placeholder="What happened?" autofocus="" [(ngModel)]="dayInfo.dayDetails"
+        (keyup.enter)="enterDetail()"> <!-- -->
+</div>
+<div>
+<label id="day-rater-title">Daily Notes</label>
+<input class="day-detail" class="dayDescTextbox" placeholder="Daily Notes" autofocus="" [(ngModel)]="dayInfo.dayNotes"
+        (keyup.enter)="enterDetail()"> 
+    </div>

@@ -1,0 +1,38 @@
+<h1>Todos</h1>
+    <input class="new-todo" placeholder="What needs to be done?" autofocus="" [(value)]="newTodo.title" (keyup.enter)="addTodo()"> 
+
+<p *ngIf="!todos"><b>Loading...</b></p>
+
+<table class="table table-striped" *ngIf="todos">
+<thead>
+    <tr>
+        <th>Title</th>
+        <th>Number of Pomerdoros</th>
+        <th>Actions</th>
+    </tr>
+</thead>
+<tbody>
+    <tr *ngFor="let todo of todos">
+        <td>{{todo.title}}</td>
+        <td>{{todo.numberOfPomerdoros}}</td>
+        <td>
+           <!-- <button type="button" 
+                class="btn btn-default btn-sm" 
+                (click)="showTodo(todo.id)">
+                Show
+            </button>
+            <button type="button" 
+                class="btn btn-success btn-sm" 
+                (click)="updateTodo(todo.id)">
+                Update
+            </button>
+            <button type="button" 
+                class="btn btn-danger btn-sm" 
+                (click)="deleteTodo(todo.id)">
+                Delete
+            </button> -->
+        </td>
+    </tr>
+
+</tbody>
+</table>
